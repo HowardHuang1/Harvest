@@ -1,40 +1,149 @@
+
+<!--
+author: W3layouts
+author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
-<html >
-
+<html lang="en" class = "noscroll">
 <head>
-  <meta charset="UTF-8">
-  <title>CO2 Emission Predictor</title>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
+<title>Harvest</title>
+<!-- custom-theme -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Germinate Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //custom-theme -->
+<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href="/static/css/mislider.css" rel="stylesheet" type="text/css" />
+<link href="/static/css/mislider-custom.css" rel="stylesheet" type="text/css" />
+<!-- font-awesome-icons -->
+<link href="/static/css/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome-icons -->
+<link href="//fonts.googleapis.com/css?family=Bree+Serif&amp;subset=latin-ext" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 </head>
+	
+<body id="noScroll">
+<!-- banner -->
+	<div class="banner">
+		<div class="container">
+			<div class="w3_agileits_banner_main_grid">
+				<div class="w3_agile_logo">
+					<h1><a href="/templates/index.html">Harvest<i>For Farmers</i></a></h1>
+				</div>				
+				<div class="clearfix"> </div>
+			</div>
+			<div class="w3_banner_info">
+				<div class="w3_banner_info_grid">
+					<h3 class="test">Choose the shits</h3>
+					<!--
+					<p>words are nice</p>
+					<ul>
+						<li><a href="contact.html" class="w3ls_more" data-toggle="modal" data-target="#myModal">Contact Us</a></li>
+					</ul>
+					-->
+				</div>
+			</div>
+			<div class="w3ls_news_grids">
+				<!--<div class="agileits_mail_grid_right1 agile_mail_grid_right1">
+					<form action="#" method="post">
+						<i> Standard input </i>
+						<span>
+							<i>Location</i>
+							<br>
+							<br>
+							<input type="text" name="Name" placeholder=" " required="">
+						</span>
+						<div class="w3_submit">
+							<input type="submit" value="Submit Now">
+						</div>
+					</form>
+				</div> -->
+				<div class="agileits_mail_grid_right1 agile_mail_grid_right1">
+					<form action="#" method="post">
+						<i> Custom </i>
+						<span>
+							<i>Ratio of Nitrogen Content in Soil</i>
+							<input type="float" name="N" placeholder=" " required="">
+						</span>
+						<span>
+							<i>Ratio of Phosporous Content in Soil</i>
+							<input type="float" name="P" placeholder=" " required="">
+						</span>
+						<span>
+							<i>Ratio of Potassium Content in Soil</i>
+							<input type="float" name="K" placeholder=" " required="">
+						</span>
+						<span>
+							<i>Temperature (C)</i>
+							<input type="float" name="temperature" placeholder=" " required="">
+						</span>
+						<span>
+							<i>Relative Humidity (%)</i>
+							<input type="float" name="humidity" placeholder=" " required="">
+						</span>
+						<span>
+							<i>pH value of Soil</i>
+							<input type="float" name="ph" placeholder=" " required="">
+						</span>
+						<span>
+							<i>Rainfall (mm)</i>
+							<input type="float" name="rainfall" placeholder=" " required="">
+						</span>
+						<div class="w3_submit">
+							<input type="submit" value="Submit Now">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+    <br>
+    <br>
+    {{ prediction_text }}
+	</div>
+<!-- //menu -->
+<!-- start-smoth-scrolling -->
 
-<body>
- <div class="login">
-	<h1>Predict CO2 Emission of Vehicles</h1>
-     <h3> Enter the following values to predict the CO2 emission from the vehicle</h3>
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
 
-     <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
-    	<input type="float" name="nitrogen" placeholder="Nitrogen" required="required" />
-        <input type="float" name="phosphorous" placeholder="Phosphorous" required="required" />
-		  <input type="float" name="Potassium" placeholder="Potassium" required="required" />
-      <input type="float" name="temperature" placeholder="temperature(celsius)" required="required" />
-      <input type="float" name="humidity" placeholder="humidity (%)" required="required" />
-      <input type="float" name="pH" placeholder="pH" required="required" />
-      <input type="float" name="rainfall" placeholder="rainfall (mm)" required="required" />
-        <button type="submit" class="btn">Predict</button>
-    </form>
-
-   <br>
-   <br>
-   {{ prediction_text }}
-
- </div>
-
-
+<!-- start-smoth-scrolling -->
+<!-- for bootstrap working -->
+	<script src="/static/js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+	
+<!-- //here ends scrolling icon -->
 </body>
 </html>
