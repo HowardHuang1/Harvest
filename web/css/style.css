@@ -4,12 +4,20 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
-html, body{
+html, body {
     font-size: 100%;
 	font-family: 'Open Sans', sans-serif;
 	background:#ffffff;
+	max-width: 100%;
+    overflow-x: hidden;
 	margin: 0;
+	/* position: fixed; */
 }
+
+#noScroll {
+	overflow-y: hidden;
+}
+
 p,ul li,ol li{
 	margin:0;
 	font-size:14px;
@@ -34,24 +42,26 @@ input[type="submit"],input[type="reset"],a{
 }
 /*-- banner --*/
 .banner{
-	background: url(../images/banner.jpg) no-repeat 0px 0px;
+	background: url(../images/banner.jpg) top right no-repeat;
+	background-attachment: fixed;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
     min-height: 770px;
-	position: relative;
+	/* position: relative; */
 }
 .banner1{
-	background: url(../images/banner.jpg) no-repeat 0px 0px;
+	background: url(../images/banner.jpg) top right no-repeat;
+	background-attachment: fixed;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
     min-height: 300px;
-	position: relative;
+	/* position: relative; */
 }
 .w3_agileits_banner_main_grid{
 	padding:2em 0 0;
