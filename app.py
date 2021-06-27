@@ -5,7 +5,7 @@ import pickle
 
 # Initialize the flask App
 app = Flask(__name__)
-model = pickle.load(open('model.pkl', 'rb'))
+model = pickle.load(open('RandomForest.pkl', 'rb'))
 
 # default page of our web-app
 @app.route('/')
