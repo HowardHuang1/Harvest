@@ -29,3 +29,26 @@ for plant in diseases:
         plants.append(plant.split('___'[0]))
     if plant.split('___')[1] != 'healthy':
         NumberOfDiseases += 1
+
+
+
+print("Number of plants: {}".format(len(plants)))
+
+print("Number of diseases: {}".format(NumberOfDiseases))
+
+# Number of images for each disease
+nums = {}
+for disease in diseases:
+    nums[disease] = len(os.listdir(train_dir + '/' + disease))
+    
+# converting the nums dictionary to pandas dataframe passing index as plant name and number of images as column
+
+img_per_class = pd.DataFrame(nums.values(), index=nums.keys(), columns=["no. of images"])
+img_per_class
+
+# datasets for validation and training
+train = ImageFolder(train_dir, transform=transforms.ToTensor())
+valid = ImageFolder(valid_dir, transform=transforms.ToTensor()) 
+
+img, label = train[0]
+print(img.shape, label)
