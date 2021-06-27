@@ -19,7 +19,7 @@ def predict():
     int_features = [float(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
-    output = round(prediction[0],2)
+    output = prediction
     return render_template('index.html', prediction_text='CO2 Emmision of the Vehicle is : {}'.format(output))
 
 if __name__ == "__main__":

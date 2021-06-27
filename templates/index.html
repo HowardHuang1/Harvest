@@ -19,10 +19,13 @@
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="enginesize" placeholder="Engine Size" required="required" />
-        <input type="text" name="cylinders" placeholder="Cylinders" required="required" />
-		<input type="text" name="fuel" placeholder="Fuel" required="required" />
-
+    	<input type="float" name="nitrogen" placeholder="Nitrogen" required="required" />
+        <input type="float" name="phosphorous" placeholder="Phosphorous" required="required" />
+		  <input type="float" name="Potassium" placeholder="Potassium" required="required" />
+      <input type="float" name="temperature" placeholder="temperature(celsius)" required="required" />
+      <input type="float" name="humidity" placeholder="humidity (%)" required="required" />
+      <input type="float" name="pH" placeholder="pH" required="required" />
+      <input type="float" name="rainfall" placeholder="rainfall (mm)" required="required" />
         <button type="submit" class="btn">Predict</button>
     </form>
 
