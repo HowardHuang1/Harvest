@@ -16,6 +16,9 @@ html, body {
 
 #noScroll {
 	overflow-y: hidden;
+	overflow-x: hidden;
+	height: 100%;
+	/* position: fixed; */
 }
 
 p,ul li,ol li{
@@ -268,8 +271,8 @@ a.w3_agile_vimeo:hover{
 	color:#a4dd25;
 }
 .w3_banner_info{
-	margin:12em 0 0;
-	width:60%;
+	margin:2em 0 0;
+	width:80%;
 }
 .w3_banner_info_grid h3{
 	font-size:2em;
@@ -676,11 +679,12 @@ figure.agileits_effect_moses:hover img {
 /*-- //welcome-bottom --*/
 /*-- news --*/
 .w3ls_news_grids{
-	margin:3em 0 0;
+	margin:2em 0 0;
+	width: 60%;
 }
 .agileits_w3layouts_news_grid{
 	padding:1.5em;
-	background:#f5f5f5;
+	/* background:#f5f5f5; */
 }
 .agileits_w3layouts_news_grid ul li{
 	display:inline-block;
@@ -1273,7 +1277,7 @@ figure.agileits_effect_moses:hover img {
 /*-- //gallery --*/
 /*-- mail --*/
 .agileits_mail_grid_right1{
-	padding:3em;
+	padding: 1em;
 	background:#f5f5f5;
 }
 .agileits_mail_grid_right1 span i{
