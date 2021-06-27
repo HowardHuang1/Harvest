@@ -13,8 +13,8 @@ from torchvision.datasets import ImageFolder
 from torchsummary import summary
 
 data_dir = "/Users/howardhuang/Documents/Harvest/new-plant-diseases-dataset/New Plant Diseases Dataset(Augmented)"
-train_dir = data_dir + "/train"
-valid_dir = data_dir + "/valid"
+train_dir = "/Users/howardhuang/Documents/Harvest/new-plant-diseases-dataset/New Plant Diseases Dataset(Augmented)/New Plant Diseases Dataset(Augmented)/train"
+valid_dir = "/Users/howardhuang/Documents/Harvest/new-plant-diseases-dataset/New Plant Diseases Dataset(Augmented)/New Plant Diseases Dataset(Augmented)/valid"
 diseases = os.listdir(train_dir)
 
 # print all disease names 
